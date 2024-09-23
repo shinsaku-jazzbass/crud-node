@@ -18,7 +18,12 @@
             <% if(action == 'add') { %>
 
             <div class="card">
-                <div class="card-header">Sample Form</div>
+                <div class="row card-header">
+                    <div class="col col-md-10">Sample AddForm</div>
+                    <div class="col col-md-2">
+                            <a href="/sample_data" class="btn btn-success btn-sm">戻る</a>
+                    </div>
+                </div>
                 <div class="card-body">
                     <form method="POST" action="/sample_data/add_sample_data">
                         <div class="row">
@@ -61,7 +66,12 @@
 
             <% } else if(action == 'edit') { %>
             <div class="card">
-                <div class="card-header">Sample Form</div>
+                <div class="row card-header">
+                    <div class="col col-md-10">Sample Form</div>
+                    <div class="col col-md-2">
+                            <a href="/sample_data" class="btn btn-success btn-sm">戻る</a>
+                    </div>
+                </div>
                 <div class="card-body">
                     <form method="POST" action="/sample_data/edit/<%= sampleData.id %>">
                         <div class="row">
@@ -97,6 +107,7 @@
                         </div>
                         <div class="mb-3">
                             <input type="submit" name="submit_button" class="btn btn-primary" value="Edit" />
+                            <a href="/sample_data/delete/<%= sampleData.id %>" class="btn btn-danger">Delete</a>
                         </div>
                     </form>
                     <script>
@@ -113,9 +124,10 @@
             <div class="card">
                 <div class="card-header">
                     <div class="row">
-                        <div class="col">Sample Data</div>
-                        <div class="col">
-                            <a href="/sample_data/add" class="btn btn-success btn-sm float-end">Add</a>
+                        <div class="col col-md-10">Sample Data</div>
+                        <div class="col col-md-2">
+                                <a href="./" class="btn btn-success btn-sm">戻る</a>
+                                <a href="/sample_data/add" class="btn btn-success btn-sm">Add</a>
                         </div>
                     </div>
                 </div>

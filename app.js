@@ -11,9 +11,12 @@ var flash = require('connect-flash');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var sampledataRouter = require('./routes/sample_data');
+var aboutRouter = require('./routes/about');
 
 
 var app = express();
+
+console.log('start app.js');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -34,10 +37,11 @@ app.use(session({
 
 app.use(flash());
 
+//app.use('/sample_data', sampledataRouter);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/sample_data', sampledataRouter);
-
+app.use('/about', aboutRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
